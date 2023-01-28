@@ -29,6 +29,7 @@ export async function createGallery(q, page = 1, per_page=40) {
     Notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`)
     refs.galleryEl.innerHTML = createMarkup(data)
     lightbox.refresh()
+    refs.beforeStartEL.classList.add('hidden')
 
     //__________ <ЗАВАНТАЖЕННЯ ЧЕРЕЗ КНОПКУ> __________ //
 

@@ -109,6 +109,22 @@ a {
 .main {
     padding: 40px;
 }
+
+.up-arrow-gif{
+  margin: 0 auto;
+  width: 30vw;
+  height: 30vh;
+  transform: rotate(180deg);
+  opacity: 0.2;
+}
+
+.text-before-start {
+    color: rgb(206, 206, 206);
+    text-transform: uppercase;
+    font-size: 4rem;
+    margin-top: 20vh;
+    text-align: center;
+}
 /* ==========  GALLERY ============= */
 .gallery {
     display: flex;
@@ -170,16 +186,14 @@ width: 300px;
     display: block;
 }
 
-.load-more.hidden {
-  display: none;
-}
+
 
 .load {
     display: block;
     margin: 40px auto;
 }
-.load.hidden {
+
+
+.hidden {
     display: none;
 }
-
-
