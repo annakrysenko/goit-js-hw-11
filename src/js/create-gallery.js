@@ -58,7 +58,6 @@ export async function createGallery(q, page = 1, per_page=40) {
                 lightbox.refresh()
 
                 refs.loaderEl.classList.add('hidden')
-                localStorage.setItem('page', page)
             }
             catch (err) {
                 console.log(err)
