@@ -19,11 +19,7 @@ const lightbox = new SimpleLightbox('.gallery  a', {
   nav: true
 });
 
-
-let page = 1;
-let per_page = 40;
-
-export async function createGallery(q) {
+export async function createGallery(q, page = 1, per_page=40) {
     const data = await getAxiosImages(q, page, per_page)
     
     if (data.totalHits === 0) {
@@ -60,7 +56,9 @@ export async function createGallery(q) {
                 const markupNextPage = createMarkup(nextPage);
                 refs.galleryEl.insertAdjacentHTML('beforeend', markupNextPage)
                 lightbox.refresh()
+
                 refs.loaderEl.classList.add('hidden')
+                localStorage.setItem('page', page)
             }
             catch (err) {
                 console.log(err)

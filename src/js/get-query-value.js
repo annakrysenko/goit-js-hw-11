@@ -2,7 +2,6 @@ import Notiflix from 'notiflix';
 
 import { messages } from './massages'
 import { createGallery } from './create-gallery';
-import { refs } from './DOM';
  
 
 export function getQueryValue(e) {
@@ -11,10 +10,14 @@ export function getQueryValue(e) {
 
     if (q === '') {
         Notiflix.Notify.warning(messages.warn);
-        // refs.galleryEl.innerHTML = '';
         return;
     }
     
     createGallery(q)
+    localStorage.setItem('query', q)
 }
+
+// export function renderAfterUpdateThePage(q) {
+//    createGallery(q) 
+// }
 
