@@ -1,8 +1,7 @@
-import { icons } from "./icons";
+import { icons } from './icons'
 
-export function createMarkup(images) {
-    const markup = images.hits.map((image) => {
-            
+export function createMarkup(images, page = 1) {
+    const markup = images.hits.map((image) => {  
         const {
             webformatURL,
             largeImageURL,
@@ -43,7 +42,7 @@ export function createMarkup(images) {
          </a>
         `
     }).join('')
-    return markup
+    return `<div data-page='${page}' class='number-page'>${markup}</div>`
 }
 
 function makeTags(string) {

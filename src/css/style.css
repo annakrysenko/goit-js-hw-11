@@ -62,13 +62,61 @@ a {
     color: white;
 }
 
+html, body {
+    min-height: 100vh;
+    max-width: 100vw;
+}
+
+body{
+    position: relative;
+}
+/* ============= START PAGE ============== */
+/* .start-page {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--common-color);
+    background-image: url('../images/1609.m00.i125.n001.S.c12.198623492 Topographic contour lines vector map seamless pattern копія.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
 
 /* ============= HEADER ================= */
 .header {
     background: var(--common-color);
-    padding: 30px 0;
+    padding: 10px 0;
     background-image: url(../images/1609.m00.i125.n001.S.c12.198623492\ Topographic\ contour\ lines\ vector\ map\ seamless\ pattern\ копія.png);
     background-size: cover;
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    height: 7vh;
+
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.header.start{
+    width: 100vw;
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home{
+    position: fixed;
+    top: 15px;
+    left: 15px;
+}
+
+.icon-home {
+    fill: var(--accent-color);
 }
 .search-form{
     margin: 0 auto;
@@ -107,13 +155,21 @@ a {
 /* =============== MAIN ================ */
 
 .main {
-    padding: 40px;
+    min-height: 87vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.before-start {
+
+
 }
 
 .up-arrow-gif{
   margin: 0 auto;
   width: 30vw;
   height: 30vh;
+
   transform: rotate(180deg);
   opacity: 0.2;
 }
@@ -125,13 +181,95 @@ a {
     margin-top: 10vh;
     text-align: center;
 }
+/* ========= SIDEBAR  ============== */
+.side-bar{
+    /* background-color: blue; */
+    min-width: 50px;
+    /* position: fixed; */
+}
+
 /* ==========  GALLERY ============= */
-.gallery {
+.gallery-wrapper{
+   display: flex;
+   justify-content: center;
+
+}
+
+
+/* ======= UP BUTTON ======== */
+/* .side-bar.right-side-bar {
+ display: flex;
+ justify-content: center;
+} */
+
+.btn-up {
+    position: fixed;
+    /* фиксированная позиция */
+    background-color: var(--common-color);
+    /* цвет заднего фона */
+    right: 20px;
+    /* расстояние от правого края */
+    bottom: 100px;
+    /* расстояние от нижнего края */
+    border-radius: 8px;
+    border: none;
+
+    /* скругление верхнего правого угла */
+    cursor: pointer;
+    /* форма курсора */
+    display: flex;
+    /* не отображать элемент */
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease-in-out;
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+}
+
+.btn-up::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    background: transparent no-repeat center center;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z'/%3E%3C/svg%3E");
+}
+
+.btn-up_hide {
+    display: none;
+}
+
+.btn-up_hiding {
+    opacity: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .btn-up:hover {
+        background-color: var(--accent-color);
+        /* цвет заднего фона при наведении */
+    }
+}
+/* .btn-up {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    color: var(--common-color);
+    border: 1px solid var(--common-color);
+    border-radius: 50%;
+    
+    margin-top: 15px;
+    z-index: 9999;
+
+    
+} */
+
+.number-page {
+    padding: 15px 5px;
     display: flex;
     gap: 40px;
     flex-wrap: wrap;
     justify-content: center;
-
 }
 .photo-card{
    background-color: var(--accent-color);
@@ -152,6 +290,9 @@ width: 300px;
     height: 180px;
     object-fit: cover;
 }
+
+
+
 /* =============== INFO ================ */
 .info {
     color: white;
@@ -194,6 +335,63 @@ width: 300px;
 }
 
 
+
+
+/* =======  FOOTER ======== */
+.footer {
+    height: 3vh;
+
+    position: sticky;
+    z-index: 888;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+
+    padding: 10px 10px;
+
+    background-color: var(--common-color);
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    /* border-top: 5px solid white; */
+
+    background-image: url(../images/1609.m00.i125.n001.S.c12.198623492\ Topographic\ contour\ lines\ vector\ map\ seamless\ pattern\ копія.png);
+        background-size: cover;
+
+    display: flex;
+    justify-content: center;
+}
+ /* ============= numbers ================= */
+.number-of-page-container {
+   display: flex;
+   column-gap: 10px;
+}
+
+
+/* .btn-number-page { */
+[data-style]{
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    color: var(--common-color);
+    width: 20px;
+    height: 20px;
+    font-size: 12px;  
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.current {
+    background-color: var(--accent-color);
+    color: white;
+    transform: scale(1.5);
+}
+
+/* --- hidden ---- */
 .hidden {
     display: none;
 }

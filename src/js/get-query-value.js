@@ -1,23 +1,20 @@
 import Notiflix from 'notiflix';
 
-import { messages } from './massages'
-import { createGallery } from './create-gallery';
- 
+import { messages } from './massages' 
 
 export function getQueryValue(e) {
     e.preventDefault()
-    const q = e.target.elements.searchQuery.value;
+    const q = e.target.elements.searchQuery.value.trim();
+    console.log(q)
 
-    if (q === '') {
+    if (q.trim() === '') {
         Notiflix.Notify.warning(messages.warn);
-        return;
+        return false;
     }
     
-    createGallery(q)
-    localStorage.setItem('query', q)
+    
+    localStorage.setItem('query', q.toLowerCase())
+        console.log(q.toLowerCase())
+
+    return q.toLowerCase()
 }
-
-// export function renderAfterUpdateThePage(q) {
-//    createGallery(q) 
-// }
-
