@@ -26,7 +26,7 @@ export const btnUp = {
     }
   },
   addEventListener() {
-    // при прокрутке окна (window)
+    this.el.classList.add('btn-up_hide'); // при прокрутке окна (window)
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY || document.documentElement.scrollTop;
       if (this.scrolling && scrollY > 0) {
@@ -34,7 +34,7 @@ export const btnUp = {
       }
       this.scrolling = false;
       // если пользователь прокрутил страницу более чем на 200px
-      if (scrollY > 600) {
+      if (scrollY > 400) {
         // сделаем кнопку .btn-up видимой
         this.show();
       } else {
